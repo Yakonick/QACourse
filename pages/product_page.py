@@ -24,3 +24,9 @@ class ProductPage(BasePage):
         cost_in_basket = self.browser.find_element(*ProductPageLocators.COST_IN_BASKET).text
         cost_in_page = self.browser.find_element(*ProductPageLocators.COST_IN_PAGE).text
         assert cost_in_basket == cost_in_page, "Different costs"
+
+    def cannot_see_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.MESSAGE_WITH_NAME_OF_BOOK), "is present"
+
+    def dissapeared_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.MESSAGE_WITH_NAME_OF_BOOK), "Not dissapeared element"
