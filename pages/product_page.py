@@ -13,7 +13,7 @@ class ProductPage(BasePage):
 
     def should_be_message_added_to_basket(self):
         assert self.is_element_present(*ProductPageLocators.MESSAGE_WITH_NAME_OF_BOOK), \
-        "There is no message on the page"
+            "There is no message on the page"
 
     def message_contains_name_of_the_book(self):
         name_of_the_book = self.browser.find_element(*ProductPageLocators.NAME_OF_BOOK).text
